@@ -9,6 +9,7 @@ class TestProjectsController < Minitest::Test
   end
 
   def test_index_when_current_user_is_an_admin
+    @controller.params = {id: nil }
     @current_user = User.new("walter@savewalterwhite.com", "admin")
     @controller.current_user = @current_user
     @controller.index
